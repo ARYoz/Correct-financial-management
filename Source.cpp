@@ -242,35 +242,6 @@ void oneTimeExpense(BankAccount& Bank)
 	Bank.addExpense(O);
 }
 
-void combinedExpense(BankAccount& Bank)
-{
-	int AdvancePayment, Fixed, Cost = 0;
-	char Name1[50], Name2[50], Name3[50] = "expenses";
-	bool E;
-	int Day, Month, Year;
-	cout << "Enter the details of the Expense:" << endl;
-	cout << "Enter the advance payment:" << endl;
-	cin >> AdvancePayment;
-	cout << "Enter the name of the advance Payment:" << endl;
-	cin >> Name1;
-	cout << "Enter the fixed amount:" << endl;
-	cin >> Fixed;
-	cout << "Enter the name of the fixed amount:" << endl;
-	cin >> Name2;
-	cout << "Enter true if this expense is not only for one time and false if is only for one time:" << endl;
-	cin >> E;
-	cout << "Enter the day expense:" << endl;
-	cin >> Day;
-	cout << "Enter the month  of the expense:" << endl;
-	cin >> Month;
-	cout << "Enter the year of the expense:" << endl;
-	cin >> Year;
-	int TotalSum = AdvancePayment + Fixed;
-	Date D(Day, Month, Year);
-	CombinedExpense C(AdvancePayment, Fixed, Month, Name1, E, Fixed, Name2, D, Name2, AdvancePayment, Name1 );
-	//Bank.addExpense(C); // צריך לבדוק תעניין!
-}
-
 
 void Bank_details(BankAccount& Bank)
 {
@@ -333,7 +304,7 @@ void Bank_details(BankAccount& Bank)
 	{
 		int Type;
 		cout << "Enter the type of this Expenses:" << endl;
-		cout << "for fixed expense clik 1,for one time expense clik 2 and for combined expense  clik 3:" << endl;
+		cout << "for fixed expense clik 1,for one time expense clik 2:" << endl;
 		cin >> Type;
 		switch (Type)
 		{
@@ -346,10 +317,6 @@ void Bank_details(BankAccount& Bank)
 		{
 			oneTimeExpense(Bank);
 			break;
-		}
-		case 3:
-		{
-			combinedExpense(Bank);
 		}
 		
 		default:
